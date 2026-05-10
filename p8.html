@@ -1,0 +1,171 @@
+# Image Gallery Webpage with Internal CSS
+
+## index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Image Gallery</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+            filter: brightness(70%);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover .overlay {
+            transform: translateY(0);
+        }
+
+        .overlay h2 {
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Creative Image Gallery</h1>
+        <p>Hover over the images to explore smooth transitions and effects</p>
+    </header>
+
+    <section class="gallery">
+
+        <div class="card">
+            <img src="https://picsum.photos/id/1015/400/300" alt="Nature 1">
+            <div class="overlay">
+                <h2>Mountain View</h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/id/1025/400/300" alt="Nature 2">
+            <div class="overlay">
+                <h2>Beautiful Parrot</h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/id/1035/400/300" alt="Nature 3">
+            <div class="overlay">
+                <h2>Ocean Breeze</h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/id/1040/400/300" alt="Nature 4">
+            <div class="overlay">
+                <h2>Forest Path</h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/id/1050/400/300" alt="Nature 5">
+            <div class="overlay">
+                <h2>Golden Desert</h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/id/1060/400/300" alt="Nature 6">
+            <div class="overlay">
+                <h2>Snow Adventure</h2>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>
+```
+
+---
+
+### How to Run
+
+1. Create a folder.
+2. Save the first code as `index.html`.
+3. Save the second code as `styles.css` in the same folder.
+4. Open `index.html` in your browser.

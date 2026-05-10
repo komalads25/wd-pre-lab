@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive CSS3 Webpage</title>
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f4f4f4;
+    color:#333;
+}
+
+/* Header */
+header{
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:40px;
+    animation:slideDown 2s ease;
+}
+
+header p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* Navigation */
+nav{
+    background:#222;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-size:18px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00d9ff;
+    transform:scale(1.1);
+}
+
+/* Multiple Column Section */
+.columns{
+    column-count:3;
+    column-gap:30px;
+    padding:40px;
+    text-align:justify;
+}
+
+.columns h2{
+    column-span:all;
+    text-align:center;
+    margin-bottom:20px;
+    color:#2575fc;
+}
+
+/* Cards Section */
+.container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:30px;
+}
+
+.card{
+    background:white;
+    width:280px;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 10px rgba(0,0,0,0.2);
+    transition:0.5s;
+}
+
+.card:hover{
+    transform:translateY(-10px) rotate(2deg);
+}
+
+.card i{
+    font-size:50px;
+    color:#2575fc;
+    margin-bottom:15px;
+    animation:rotateIcon 3s linear infinite;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+/* Button */
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#2575fc;
+    color:white;
+    text-decoration:none;
+    border-radius:25px;
+    transition:0.4s;
+}
+
+.btn:hover{
+    background:#6a11cb;
+    transform:scale(1.1);
+}
+
+/* Footer */
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:20px;
+}
+
+/* Animations */
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes rotateIcon{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media(max-width:900px){
+    .columns{
+        column-count:2;
+    }
+}
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    .columns{
+        column-count:1;
+        padding:20px;
+    }
+
+    nav a{
+        display:block;
+        margin:10px 0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>CSS3 Responsive Webpage</h1>
+    <p>Using Columns, Fonts, Icons, Animations & Transformations</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+</nav>
+
+<section class="columns">
+    <h2>About CSS3 Features</h2>
+
+    <p>
+        CSS3 provides many advanced features to create beautiful and responsive
+        webpages. Multiple columns help divide content into newspaper style layouts.
+        Web fonts improve typography and make websites attractive.
+    </p>
+
+    <p>
+        Icons can be added using Font Awesome libraries. Animations and transitions
+        create interactive effects for users. Transformations such as rotate, scale,
+        and translate improve webpage design and user experience.
+    </p>
+
+    <p>
+        Responsive design allows webpages to work properly on mobiles, tablets,
+        and desktops. Media queries automatically adjust layout and font size
+        according to screen width.
+    </p>
+</section>
+
+<section class="container">
+
+    <div class="card">
+        <i class="fa-solid fa-code"></i>
+        <h3>Web Design</h3>
+        <p>Create responsive and modern website layouts using CSS3.</p>
+        <a href="#" class="btn">Read More</a>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <h3>Responsive Design</h3>
+        <p>Webpages automatically adjust for mobile and desktop screens.</p>
+        <a href="#" class="btn">Read More</a>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-palette"></i>
+        <h3>Creative UI</h3>
+        <p>Use animations, gradients, and transformations for attractive UI.</p>
+        <a href="#" class="btn">Read More</a>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 CSS3 Responsive Webpage | Designed by Komal</p>
+</footer>
+
+</body>
+</html>
